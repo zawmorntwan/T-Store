@@ -1,0 +1,6 @@
+flutter_native_splash:
+  image: assets/images/splash.png
+  android_gravity: center
+  color: "#FFFFFF"
+  color_dark: "#272727"
+  fullscreen: true
