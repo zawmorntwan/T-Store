@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:t_store/features/authentication/screens/signup/signup.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
 
@@ -27,7 +29,7 @@ class LoginForm extends StatelessWidget {
             const SizedBox(
               height: AppSizes.spaceBtwInputFields,
             ),
-    
+
             // Password
             TextFormField(
               decoration: const InputDecoration(
@@ -39,7 +41,7 @@ class LoginForm extends StatelessWidget {
             const SizedBox(
               height: AppSizes.spaceBtwInputFields / 2,
             ),
-    
+
             // Remember Me & Fotget Password
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -56,7 +58,7 @@ class LoginForm extends StatelessWidget {
                     )
                   ],
                 ),
-    
+
                 // Forgot Password
                 TextButton(
                   onPressed: () {},
@@ -67,7 +69,7 @@ class LoginForm extends StatelessWidget {
             const SizedBox(
               height: AppSizes.spaceBtwSections,
             ),
-    
+
             // Sign In Button
             SizedBox(
               width: double.infinity,
@@ -76,7 +78,7 @@ class LoginForm extends StatelessWidget {
                 child: const Text(AppTexts.signIn),
               ),
             ),
-    
+
             const SizedBox(
               height: AppSizes.spaceBtwItems,
             ),
@@ -84,7 +86,9 @@ class LoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
-                onPressed: () {},
+                onPressed: () => Get.to(
+                  () => const SignupScreen(),
+                ),
                 child: const Text(AppTexts.createAccount),
               ),
             ),
