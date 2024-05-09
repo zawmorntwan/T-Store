@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 sealed class AppHttpHelper {
-  static const String _baseURL = 'https://fakestoreapi.com';
+  static const String _baseURL = 'http://192.168.110.247:3004/';
 
   // GET request
   static Future<Map<String, dynamic>> get(String endpoint) async {
