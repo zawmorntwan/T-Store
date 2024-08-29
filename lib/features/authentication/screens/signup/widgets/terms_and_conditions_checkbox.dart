@@ -15,13 +15,18 @@ class TermsAndConditionsCheckBox extends StatelessWidget {
 
     return Row(
       children: [
-        SizedBox(
-          width: 24,
-          height: 24,
-          child: Checkbox(
-            value: true,
-            onChanged: (_) {},
-          ),
+        // SizedBox(
+        //   width: 24,
+        //   height: 24,
+        //   child: Checkbox(
+        //     value: true,
+        //     onChanged: (_) {},
+        //   ),
+        // ),
+        Radio(
+          value: true,
+          groupValue: true,
+          onChanged: (_) {},
         ),
         const SizedBox(
           width: AppSizes.spaceBtwItems,
