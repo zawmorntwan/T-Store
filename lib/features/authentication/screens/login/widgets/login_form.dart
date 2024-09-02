@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/features/authentication/screens/signup/signup.dart';
-import 'package:t_store/utils/constants/sizes.dart';
-import 'package:t_store/utils/constants/text_strings.dart';
+
+import '../../../../../utils/constants/sizes.dart';
+import '../../../../../utils/constants/text_strings.dart';
+import '../../password_configuration/forget_password.dart';
+import '../../signup/signup.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({
@@ -61,7 +63,7 @@ class LoginForm extends StatelessWidget {
 
                 // Forgot Password
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(() => const ForgetPassword()),
                   child: const Text(AppTexts.forgetPassword),
                 )
               ],
@@ -86,9 +88,7 @@ class LoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
-                onPressed: () => Get.to(
-                  () => const SignupScreen(),
-                ),
+                onPressed: () => Get.to(() => const SignupScreen()),
                 child: const Text(AppTexts.createAccount),
               ),
             ),
