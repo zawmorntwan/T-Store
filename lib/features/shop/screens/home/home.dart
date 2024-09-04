@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'widgets/home_appbar.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,7 +13,10 @@ class HomeScreen extends StatelessWidget {
           children: [
             PrimaryHeaderContainer(
               child: Column(
-                children: [],
+                children: [
+                  // App Bar
+                  HomeAppBar(),
+                ],
               ),
             ),
           ],
