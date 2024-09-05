@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'widgets/home_appbar.dart';
+import '../../../../utils/constants/sizes.dart';
+import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -16,6 +18,17 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   // App Bar
                   HomeAppBar(),
+                  SizedBox(
+                    height: AppSizes.spaceBtwSections,
+                  ),
+
+                  // Search Bar
+                  SearchContainer(
+                    text: 'Search in store',
+                  ),
+                  SizedBox(
+                    height: AppSizes.spaceBtwSections,
+                  ),
                 ],
               ),
             ),
