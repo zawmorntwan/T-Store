@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../utils/constants/image_strings.dart';
 import 'widgets/home_appbar.dart';
 import 'widgets/home_categories.dart';
 import '../../../../utils/constants/sizes.dart';
@@ -7,6 +8,7 @@ import '../../../../utils/constants/colors.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
+import 'widgets/promo_slider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,6 +18,7 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            // Header
             PrimaryHeaderContainer(
               child: Column(
                 children: [
@@ -58,6 +61,23 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
+
+            // Body
+            Padding(
+              padding: EdgeInsets.all(AppSizes.defaultSpace),
+              child: PromoSlider(
+                banners: [
+                  AppImages.promotionBanner1,
+                  AppImages.promotionBanner2,
+                  AppImages.promotionBanner3,
+                  AppImages.promotionBanner4,
+                  AppImages.promotionBanner5,
+                  AppImages.promotionBanner6,
+                  AppImages.promotionBanner7,
+                  AppImages.promotionBanner8,
+                ],
+              ),
+            )
           ],
         ),
       ),

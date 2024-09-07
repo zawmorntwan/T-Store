@@ -30,4 +30,15 @@ sealed class AppImages {
   static const String furnitureIcon = 'assets/icons/categories/icons8-dining-chair-64.png';
   static const String jeweleryIcon = 'assets/icons/categories/icons8-sparkling-diamond-64.png';
   static const String electronicsIcon = 'assets/icons/categories/icons8-smartphone-64.png';
+  static const String kidIcon = 'assets/icons/categories/icons8-school-uniform-64.png';
+
+  // Banners
+  static const String promotionBanner1 = 'assets/images/banners/banner_1.jpg';
+  static const String promotionBanner2 = 'assets/images/banners/banner_2.jpg';
+  static const String promotionBanner3 = 'assets/images/banners/banner_3.jpg';
+  static const String promotionBanner4 = 'assets/images/banners/banner_4.jpg';
+  static const String promotionBanner5 = 'assets/images/banners/banner_5.jpg';
+  static const String promotionBanner6 = 'assets/images/banners/banner_6.jpg';
+  static const String promotionBanner7 = 'assets/images/banners/banner_7.jpg';
+  static const String promotionBanner8 = 'assets/images/banners/banner_8.jpg';
 }
