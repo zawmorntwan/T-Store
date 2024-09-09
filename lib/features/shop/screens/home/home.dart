@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../common/widgets/products/product_cards/product_card_vertical.dart';
 import '../../../../utils/constants/image_strings.dart';
 import 'widgets/home_appbar.dart';
 import 'widgets/home_categories.dart';
@@ -77,7 +78,12 @@ class HomeScreen extends StatelessWidget {
                   AppImages.promotionBanner8,
                 ],
               ),
-            )
+            ),
+            SizedBox(
+              height: AppSizes.spaceBtwSections,
+            ),
+
+            ProductCardVertical()
           ],
         ),
       ),
