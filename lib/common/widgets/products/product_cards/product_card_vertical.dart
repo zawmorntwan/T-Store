@@ -106,38 +106,42 @@ class ProductCardVertical extends StatelessWidget {
                       ),
                     ],
                   ),
-                  // Spacer(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // Price
-                      const ProductPriceText(
-                        currencySign: '\$',
-                        price: '35.5',
-                        isLarge: true,
-                      ),
-
-                      // Add to cart button
-                      Container(
-                        decoration: const BoxDecoration(
-                          color: AppColors.dark,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(AppSizes.cardRadiusMd),
-                            bottomRight: Radius.circular(AppSizes.productImageRadius),
-                          ),
-                        ),
-                        child: const SizedBox(
-                          width: AppSizes.iconLg * 1.2,
-                          height: AppSizes.iconLg * 1.2,
-                          child: Center(
-                            child: Icon(Iconsax.add, color: AppColors.white),
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
                 ],
               ),
+            ),
+
+            const Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                // Price
+                const Padding(
+                  padding: EdgeInsets.only(left: AppSizes.sm),
+                  child: ProductPriceText(
+                    currencySign: '\$',
+                    price: '35.5',
+                    isLarge: true,
+                  ),
+                ),
+
+                // Add to cart button
+                Container(
+                  decoration: const BoxDecoration(
+                    color: AppColors.dark,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(AppSizes.cardRadiusMd),
+                      bottomRight: Radius.circular(AppSizes.productImageRadius),
+                    ),
+                  ),
+                  child: const SizedBox(
+                    width: AppSizes.iconLg * 1.2,
+                    height: AppSizes.iconLg * 1.2,
+                    child: Center(
+                      child: Icon(Iconsax.add, color: AppColors.white),
+                    ),
+                  ),
+                ),
+              ],
             )
           ],
         ),

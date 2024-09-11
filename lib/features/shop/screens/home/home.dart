@@ -81,9 +81,14 @@ class HomeScreen extends StatelessWidget {
                       AppImages.promotionBanner8,
                     ],
                   ),
-
                   const SizedBox(
                     height: AppSizes.spaceBtwSections,
+                  ),
+
+                  // Heading
+                  const SectionHeading(title: 'Popular Products'),
+                  const SizedBox(
+                    height: AppSizes.spaceBtwItems,
                   ),
 
                   // Popular products
