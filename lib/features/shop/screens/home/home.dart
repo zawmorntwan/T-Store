@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../common/widgets/layouts/grid_layout.dart';
 import '../../../../common/widgets/products/product_cards/product_card_vertical.dart';
 import '../../../../utils/constants/image_strings.dart';
 import 'widgets/home_appbar.dart';
@@ -15,7 +16,7 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -65,25 +66,34 @@ class HomeScreen extends StatelessWidget {
 
             // Body
             Padding(
-              padding: EdgeInsets.all(AppSizes.defaultSpace),
-              child: PromoSlider(
-                banners: [
-                  AppImages.promotionBanner1,
-                  AppImages.promotionBanner2,
-                  AppImages.promotionBanner3,
-                  AppImages.promotionBanner4,
-                  AppImages.promotionBanner5,
-                  AppImages.promotionBanner6,
-                  AppImages.promotionBanner7,
-                  AppImages.promotionBanner8,
+              padding: const EdgeInsets.all(AppSizes.defaultSpace),
+              child: Column(
+                children: [
+                  const PromoSlider(
+                    banners: [
+                      AppImages.promotionBanner1,
+                      AppImages.promotionBanner2,
+                      AppImages.promotionBanner3,
+                      AppImages.promotionBanner4,
+                      AppImages.promotionBanner5,
+                      AppImages.promotionBanner6,
+                      AppImages.promotionBanner7,
+                      AppImages.promotionBanner8,
+                    ],
+                  ),
+
+                  const SizedBox(
+                    height: AppSizes.spaceBtwSections,
+                  ),
+
+                  // Popular products
+                  GridLayout(
+                    itemCount: 2,
+                    itemBuilder: (_, index) => const ProductCardVertical(),
+                  ),
                 ],
               ),
             ),
-            SizedBox(
-              height: AppSizes.spaceBtwSections,
-            ),
-
-            ProductCardVertical()
           ],
         ),
       ),

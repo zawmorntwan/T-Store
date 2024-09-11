@@ -1,24 +1,44 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../../../utils/constants/colors.dart';
+import '../../../utils/constants/sizes.dart';
+import '../../../utils/helpers/helper_functions.dart';
 
 class CircularIcon extends StatelessWidget {
   const CircularIcon({
     super.key,
-    required this.darkMode,
+    this.width,
+    this.height,
+    this.size = AppSizes.lg,
+    required this.icon,
+    this.color,
+    this.backgroundColor,
+    this.onPressed,
   });
 
-  final bool darkMode;
+  final double? width, height, size;
+  final IconData icon;
+  final Color? color;
+  final Color? backgroundColor;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: width,
+      height: height,
       decoration: BoxDecoration(
-        color: darkMode ? AppColors.black.withOpacity(0.9) : AppColors.white.withOpacity(0.9),
+        color: backgroundColor ?? (AppHelperFunctions.isDarkMode(context) ? AppColors.black.withOpacity(0.9) : AppColors.white.withOpacity(0.9)),
         borderRadius: BorderRadius.circular(100),
       ),
-      child: IconButton(onPressed: () {}, icon: const Icon(Iconsax.heart5)),
+      child: IconButton(
+        onPressed: onPressed,
+        icon: Icon(
+          icon,
+          color: color,
+          size: size,
+        ),
+      ),
     );
   }
 }
