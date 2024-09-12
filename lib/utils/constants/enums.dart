@@ -1,4 +1,4 @@
-enum TextSized { small, medium, large }
+enum TextSizes { small, medium, large }
 
 enum OrderStatus { pending, processing, shipped, delivered, canceled }
 

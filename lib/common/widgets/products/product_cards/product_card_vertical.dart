@@ -9,6 +9,7 @@ import '../../../styles/shadows.dart';
 import '../../custom_shapes/containers/rounded_container.dart';
 import '../../icons/circular_icon.dart';
 import '../../images/rounded_image.dart';
+import '../../texts/brand_title_with_verify_icon.dart';
 import '../../texts/product_price_text.dart';
 import '../../texts/product_title_text.dart';
 
@@ -74,7 +75,7 @@ class ProductCardVertical extends StatelessWidget {
             ),
 
             // Details
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(
                 left: AppSizes.sm,
               ),
@@ -88,23 +89,8 @@ class ProductCardVertical extends StatelessWidget {
                   SizedBox(
                     height: AppSizes.spaceBtwItems / 2,
                   ),
-                  Row(
-                    children: [
-                      Text(
-                        'Nike',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      const SizedBox(
-                        width: AppSizes.xs,
-                      ),
-                      const Icon(
-                        Iconsax.verify5,
-                        color: AppColors.primary,
-                        size: AppSizes.iconXs,
-                      ),
-                    ],
+                  BrandTitleWithVerifiedIcon(
+                    title: 'Nike',
                   ),
                 ],
               ),
