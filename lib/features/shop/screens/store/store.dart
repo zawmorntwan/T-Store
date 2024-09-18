@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../../../../common/widgets/appbar/tabbar.dart';
-import '../../../../utils/constants/enums.dart';
+import '../../../../common/widgets/brands/brand_card.dart';
 import '../../../../common/widgets/appbar/appbar.dart';
-import '../../../../common/widgets/custom_shapes/containers/rounded_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
-import '../../../../common/widgets/images/circular_image.dart';
 import '../../../../common/widgets/layouts/grid_layout.dart';
 import '../../../../common/widgets/products/cart/cart_icon.dart';
-import '../../../../common/widgets/texts/brand_title_with_verify_icon.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/colors.dart';
-import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/helpers/helper_functions.dart';
+import 'widgets/category_tab.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
@@ -72,45 +69,8 @@ class StoreScreen extends StatelessWidget {
                       itemCount: 4,
                       mainAxisExtent: 80,
                       itemBuilder: (_, index) {
-                        return GestureDetector(
-                          onTap: () {},
-                          child: RoundedContainer(
-                            padding: const EdgeInsets.all(AppSizes.sm),
-                            showBorder: true,
-                            backgroundColor: Colors.transparent,
-                            child: Row(
-                              children: [
-                                // -- Icon
-                                Flexible(
-                                  child: CircularImage(
-                                    imagePath: AppImages.clothIcon,
-                                    backgroundColor: Colors.transparent,
-                                    overleyColor: AppHelperFunctions.isDarkMode(context) ? AppColors.white : AppColors.black,
-                                  ),
-                                ),
-                                const SizedBox(height: AppSizes.spaceBtwItems / 2),
-
-                                // -- Text
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      const BrandTitleWithVerifiedIcon(
-                                        title: 'Nike',
-                                        brandTextSizes: TextSizes.large,
-                                      ),
-                                      Text(
-                                        '256 products',
-                                        overflow: TextOverflow.ellipsis,
-                                        style: Theme.of(context).textTheme.labelMedium,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
+                        return const BrandCard(
+                          showBorder: true,
                         );
                       },
                     )
@@ -159,16 +119,11 @@ class StoreScreen extends StatelessWidget {
           // Body
           body: const TabBarView(
             children: [
-              Padding(
-                padding: EdgeInsets.all(AppSizes.defaultSpace),
-                child: Column(
-                  children: [
-                    // Brands
-
-                    // Products You May Like
-                  ],
-                ),
-              ),
+              CategoryTab(),
+              CategoryTab(),
+              CategoryTab(),
+              CategoryTab(),
+              CategoryTab(),
             ],
           ),
         ),
